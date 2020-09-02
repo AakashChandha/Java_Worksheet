@@ -10,53 +10,95 @@ import java.util.Scanner;
  * @author SONAL L R
  */
 public class Interface_income {
-    public static void main(String[] args){
+   public static void main(String args[]){
         Scanner obj=new Scanner(System.in);
-        System.out.println("Enter the gender of the employee:");
-        String gender=obj.next();
-        System.out.println("Enter the income of the employee:");
-        double income=obj.nextDouble();
-        
-        employee1 obj1=new employee1();
-        obj1.show(gender,income);
-        obj1.information(gender,income);
-    }
+        System.out.print("Enter the employee name:");
+        double salary;
+        double tax=0;
+        String a=obj.next();
+        System.out.print("Enter the employee gender(If female enter F and if male enter M):");
+        char b=obj.next().charAt(0);
+        System.out.print("Enter the employee salary:");
+        salary=obj.nextDouble();
+        employee1 e=new employee1();
+        e.show(salary,tax,b);
+        e.information();
+   }
 }
-interface customer
+interface Customer
 {
-    void information(String gender,double income);
-    void show(String gender,double income);
+    void information();
+    void show(double income,double Tax,char b);
 } 
-class employee1 implements customer
+class employee1 implements Customer
 {
-    public void information(String gender,double income)
+    public void show(double income,double Tax,char b)
     {
-        if(gender=="Male")
+        System.out.println("\nCalculation of tax:");
+        if(income<=190000)
         {
-            if(income<=190000)
-                System.out.println("Tax% is:NIL");
-            else if(income>190000 && income<=200000)
-                System.out.println("Tax% is:10%");
-            else if(income>200000 && income<=500000)
-                System.out.println("Tax% is:20%");
-            else //(if income>500000)
-                System.out.println("Tax% is:25%");
+            if(b=='M')
+            {
+                Tax=income*0.0;
+                System.out.println("The tax is 0% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+            if(b=='F')
+            {
+                Tax=income*0.0;
+                System.out.println("The tax is 0% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
         }
-        else //if(gender=="Female")
+        if(income>190000 && income<=200000)
         {
-            if(income<=190000)
-                System.out.println("Tax% is:NIL");
-            else if(income>190000 && income<=200000)
-                System.out.println("Tax% is:NIL");
-            else if(income>200000 && income<=500000)
-                System.out.println("Tax% is:10%");
-            else //(if income>500000)
-                System.out.println("Tax% is:2%");
-        }  
+            if(b=='M')
+            {
+                Tax=income*0.1;
+                System.out.println("The tax is 10% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+            else
+            {
+                Tax=income*0.0;
+                System.out.println("The tax is 0% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+        }
+        if(income>200000 && income<=500000)
+        {
+            if(b=='M')
+            {
+                Tax=income*0.2;
+                System.out.println("The tax is 20% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+            if(b=='F')
+            {
+                Tax=income*0.1;
+                System.out.println("The tax is 10% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+        }
+        if(income>500000)
+        {
+            if(b=='M')
+            {
+                Tax=income*0.25;
+                System.out.println("The tax is 25% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }
+            else
+            {
+                Tax=income*0.2;
+                System.out.println("The tax is 20% from the salary");
+                System.out.println("The tax amount of the employee is:"+Tax);
+            }                    
+        }
     }
-    public void show(String gender,double income)
+    public void information() 
     {
-        System.out.println("Gender of the employee is:"+gender);
-        System.out.println("\nSalary of the employee is:"+income);
+        System.out.println("\nThe tax amount differs from gender to gender.");
+        System.out.println("The tax amount differs from the salary of the employee also.");
     }
 }
