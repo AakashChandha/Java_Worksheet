@@ -13,8 +13,16 @@ import java.util.Collections;
  * @author SONAL L R
  */
 public class Numbers_al {
-    public static void main(String[] args){
-        ArrayList<Integer> list=new ArrayList<Integer>();//creation of arraylist
+    Scanner obj=new Scanner(System.in);  //getting input from the user
+        int num; 
+        System.out.print("Enter 8 integers:");
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for (int i=0;i<8;i++)
+        {
+            num=obj.nextInt(); 
+            list.add(num); 
+        }
+        /*ArrayList<Integer> list=new ArrayList<Integer>();//creation of arraylist
         list.add(87);
         list.add(19);
         list.add(96);
@@ -22,7 +30,7 @@ public class Numbers_al {
         list.add(66);
         list.add(18);
         list.add(128);
-        list.add(22);
+        list.add(22);*/
         System.out.println("The Arraylist values are:"+list);
         double total=0;
         double avg;
