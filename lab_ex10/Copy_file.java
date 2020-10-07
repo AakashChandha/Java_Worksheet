@@ -23,9 +23,9 @@ public class Copy_file {
             int read;
             while((read=fis.read())!=-1)
             {
-                if(read==' ') //if space is encountered, skip the loop by use of "continue" statement
+                if(read==' ') //if space is found, skip the loop by using "continue" statement
                 continue;
-                fos.write(read); //writing each character to "two.txt" file
+                fos.write(read); //writing each character to "copy1.txt" file
             }
             fis.close();
             fos.close();
