@@ -28,7 +28,7 @@ public class Generic_method {
         //Echanging position between 2 elements
         System.out.println("Enter the 1st element position that has to be exchanged:"); //(1-8)
         int x=obj.nextInt();
-        System.out.println("Enter the 2nd element position that has to be exchanged:"); //(1-0)
+        System.out.println("Enter the 2nd element position that has to be exchanged:"); //(1-8)
         int y=obj.nextInt();
         if(x>9||x<0||y>9||y<0)
         {
